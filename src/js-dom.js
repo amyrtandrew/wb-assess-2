@@ -9,6 +9,16 @@
 // should switch from "Log Out" to "Log In".
 
 /// TODO: replace this with your code
+let button = document.querySelector("#auth")
+
+button.addEventListener(`click`, () => {
+   if (button.innerText === "Log in") {
+    button.innerText = "Log out"
+   } else {
+    button.innerText = "Log in"
+   }
+})
+
 
 // Send an alert
 //
