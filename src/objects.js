@@ -13,7 +13,13 @@
 //     { firstName: 'Karlach', lastName: 'Cliffgate', location: 'Avernus' }
 //   ]);
 //   => ['Gale Dekarios', 'Wyll Ravengard', 'Karlach Cliffgate'];
-function getNames(people) {}
+function getNames(people) {
+  for (const key in people) {
+    if (key === `firstName` || key === `lastName`) {
+      return key
+    }
+  }
+}
 
 // Given an object representing a person, return their full name (first name and last name).
 // You MUST use object destructuring in your solution.
@@ -24,7 +30,10 @@ function getNames(people) {}
 // Ex.:
 //   getName({ firstName: 'Gale', lastName: 'Dekarios', location: 'Waterdeep' });
 //   => 'Gale Dekarios'
-function getNameUsingDestructuring(person) {}
+function getNameUsingDestructuring(person) {
+  const {firstName, lastName} = person
+  return `${firstName} ${lastName}`
+}
 
 // Given an array of objects representing people, return a new array of the
 // people matching the given location.
@@ -72,7 +81,13 @@ const EN_PIRATE_LOOKUP = {
   hello: 'ahoy',
 };
 
-function translateToPirateTalk(phrase) {}
+function translateToPirateTalk(phrase) {
+  // for (const key in EN_PIRATE_LOOKUP) {
+  //   if (key) {
+  //     return 
+  //   }
+  // }
+}
 
 // Return the number of occurrences of each word in a string.
 // This function doesn't handle punctuation and is case-sensitive, so you can
