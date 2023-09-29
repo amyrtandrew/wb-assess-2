@@ -1,0 +1,19 @@
+
+body {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+.planet-table {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  margin-top: 50px;
+}
+td {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  padding: 5px;
+}
+
