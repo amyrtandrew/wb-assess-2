@@ -9,25 +9,19 @@
 
   <body>
     <form>
-      <label>Character Name:</label> 
+      <label>Character name:</label>
       <input type="text" name="character-name" />
-    </form>
-    <form>
-      <input type="radio" name="jedi">
-      <label>Jedi</label>
-      <input type="radio" name="sith">
-      <label>Sith</label>
-    </form>
-    <form>
-      <label>Lightsaber color:</label>
-      <select>
-        <option value="Blue">Blue</option>
-        <option value="Green">Green</option>
-        <option value="Red">Red</option>
-        <option value="Purple">Purple</option>
+      <input type="radio" value="jedi">
+      <label for="jedi">Jedi</label>
+      <input type="radio" value="sith">
+      <label for="sith">Sith</label>
+      <select class="lightsaber">
+        <option class="lighhtsaber" value="Blue">Blue</option>
+        <option class="lighhtsaber" value="Green">Green</option>
+        <option class="lighhtsaber" value="Red">Red</option>
+        <option class="lighhtsaber" value="Purple">Purple</option>
+        <label for="lightsaber">Lightsaber color:</label>
       </select>
-    </form>
-    <form>
       <input type="submit" name="submit">
     </form>
    <table class="planet-table">

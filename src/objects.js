@@ -14,11 +14,8 @@
 //   ]);
 //   => ['Gale Dekarios', 'Wyll Ravengard', 'Karlach Cliffgate'];
 function getNames(people) {
-  for (const key in people) {
-    if (key === `firstName` || key === `lastName`) {
-      return key
-    }
-  }
+const {firstName, lastName} = people
+return 
 }
 
 // Given an object representing a person, return their full name (first name and last name).

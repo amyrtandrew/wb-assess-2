@@ -28,6 +28,17 @@ button.addEventListener(`click`, () => {
 // text box. Then, they can submit the form to trigger the alert.
 
 /// TODO: replace this with your code
+let textInput = document.querySelector(`#alert-message`)
+textInput.addEventListener(`submit` , () => {
+    alert(textInput).value
+})
+
+
+// let sendAlert = document.querySelector("#alert-message")
+
+// sendAlert.addEventListener(`submit`, () => {
+//     alert(`#alert-message`.value)
+// })
 
 // Add an item
 //
@@ -45,7 +56,13 @@ button.addEventListener(`click`, () => {
 //   </ol>
 
 /// TODO: replace this with your code
-
+let dblClick = document.querySelector('#item-adder')
+let entry = `Item`
+let listItem = document.querySelector('#list')
+dblClick.addEventListener('click', () => {
+// make it so that every time item adder is clicked, one item is added to the list
+listItem.appendChild(entry)
+})
 // Change colors
 //
 // Users should be able to change the color of any element with the
