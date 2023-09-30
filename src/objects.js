@@ -54,12 +54,8 @@ function getNameUsingDestructuring(person) {
 //     { firstName: 'Astarion', lastName: 'Ancunin', location: "Baldur's Gate" }
 //   ];
 function getPeopleByLocation(people, location) {
-for (const key in people) {
-  if (!people[key] === location) {
-    delete people[key]
-    return people
-  }
-}
+  const peopleInLocationArr = people.filter((person) => person.location === location)
+return peopleInLocationArr
 }
 
 // Translate a phrase to pirate talk.
