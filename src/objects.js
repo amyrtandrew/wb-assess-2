@@ -14,9 +14,13 @@
 //   ]);
 //   => ['Gale Dekarios', 'Wyll Ravengard', 'Karlach Cliffgate'];
 function getNames(people) {
-const {firstName, lastName} = people
-return 
+  const firstLastArray = people.map((person) => `${person.firstName} ${person.lastName}`);
+  return firstLastArray
 }
+
+
+//   => ['Gale Dekarios', 'Wyll Ravengard', 'Karlach Cliffgate'];
+ 
 
 // Given an object representing a person, return their full name (first name and last name).
 // You MUST use object destructuring in your solution.
@@ -49,7 +53,14 @@ function getNameUsingDestructuring(person) {
 //     { firstName: 'Wyll', lastName: 'Ravengard', location: "Baldur's Gate" },
 //     { firstName: 'Astarion', lastName: 'Ancunin', location: "Baldur's Gate" }
 //   ];
-function getPeopleByLocation(people, location) {}
+function getPeopleByLocation(people, location) {
+for (const key in people) {
+  if (!people[key] === location) {
+    delete people[key]
+    return people
+  }
+}
+}
 
 // Translate a phrase to pirate talk.
 //
@@ -93,7 +104,11 @@ function translateToPirateTalk(phrase) {
 // Ex.:
 //   wordCount('hello world')
 //   => { hello: 1, world: 1 }
-function wordCount(str) {}
+function wordCount(str) {
+  // for (const element of str) {
+  //   if (element )
+  // }
+}
 
 // Given an object representing a bug, return true if the given bug is
 // available in the given month.
@@ -115,7 +130,11 @@ function wordCount(str) {}
 //     }
 //   }, 1);
 //   => true
-function isBugAvailable(bug, month) {}
+function isBugAvailable(bug, month) {
+  // for (const key in bug) {
+  //   if ()
+  // }
+}
 
 // Given an array of objects representing bugs, return an object that'll be
 // used to build a calendar. The keys of the object should be the months of the
