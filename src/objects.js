@@ -86,11 +86,12 @@ const EN_PIRATE_LOOKUP = {
 };
 
 function translateToPirateTalk(phrase) {
-  // for (const key in EN_PIRATE_LOOKUP) {
-  //   if (key) {
-  //     return 
-  //   }
-  // }
+  for (const key in EN_PIRATE_LOOKUP) {
+    // if the key === excuse || 
+    if (key) {
+      return 
+    }
+  }
 }
 
 // Return the number of occurrences of each word in a string.
@@ -127,9 +128,11 @@ function wordCount(str) {
 //   }, 1);
 //   => true
 function isBugAvailable(bug, month) {
-  // for (const key in bug) {
-  //   if ()
-  // }
+  for (const key in bug) {
+    if (key.includes(month)) {
+    return true
+  }
+}
 }
 
 // Given an array of objects representing bugs, return an object that'll be
