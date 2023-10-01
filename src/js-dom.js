@@ -28,17 +28,17 @@ button.addEventListener(`click`, () => {
 // text box. Then, they can submit the form to trigger the alert.
 
 /// TODO: replace this with your code
-let textInput = document.querySelector(`#alert-message`)
-textInput.addEventListener(`submit` , () => {
-    alert(textInput).value
-})
-
-
-// let sendAlert = document.querySelector("#alert-message")
-
-// sendAlert.addEventListener(`submit`, () => {
-//     alert(`#alert-message`.value)
+// let textInput = document.querySelector(`#alert-message`)
+// textInput.addEventListener(`submit` , () => {
+//     alert(textInput).value
 // })
+
+
+let sendAlert = document.querySelector("#alert-message")
+
+sendAlert.addEventListener(`submit`, () => {
+    alert(`#alert-message`.innerText)
+})
 
 // Add an item
 //

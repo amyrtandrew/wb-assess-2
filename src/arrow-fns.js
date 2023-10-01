@@ -63,6 +63,13 @@ function createGreetings(names) {}
 // Ex.:
 //   loudLongWords(['apple', 'pear', 'cake', 'pinata']);
 //   => ['APPLE', 'PINATA']
-function loudLongWords(words) {}
+function loudLongWords(words) {
+    const newArr = []
+for (const word of words) {
+  if (word.length > 4)
+  newArr.push(word.toUpperCase())
+}
+return newArr
+        }
 
 export { addNums, createGreetings, evens, giveMeTwo, loudLongWords, max };
