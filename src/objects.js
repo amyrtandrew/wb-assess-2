@@ -86,12 +86,21 @@ const EN_PIRATE_LOOKUP = {
 };
 
 function translateToPirateTalk(phrase) {
-  for (const key in EN_PIRATE_LOOKUP) {
-    // if the key === excuse || 
-    if (key) {
-      return 
-    }
+  let newPhrase = ''
+  // split the given phrase into an array divided into each word
+  const wordsArr = phrase.split(' ')
+  // for each word in words array, if the word exists in EN_PIRATE_LOOKUP, the value of the key in the object will be added to newPhrase
+  for (const word of wordsArr) {
+      if (EN_PIRATE_LOOKUP.hasOwnProperty(word)) {
+          newPhrase += " " + EN_PIRATE_LOOKUP[word]
+      }
+  // if the word does not exist in the object, the given word in the phrase will be added to newPhrase
+      else {
+          newPhrase +=  " " + word
+      }
+     
   }
+  return newPhrase.trim()
 }
 
 // Return the number of occurrences of each word in a string.
@@ -102,9 +111,10 @@ function translateToPirateTalk(phrase) {
 //   wordCount('hello world')
 //   => { hello: 1, world: 1 }
 function wordCount(str) {
-  // for (const element of str) {
-  //   if (element )
-  // }
+//   const strAsArray = str.split(' ')
+//   for (const element of strAsArray) {
+//     if (element )
+//   }
 }
 
 // Given an object representing a bug, return true if the given bug is
@@ -128,11 +138,17 @@ function wordCount(str) {
 //   }, 1);
 //   => true
 function isBugAvailable(bug, month) {
+  // loop throug each key in bug object
   for (const key in bug) {
-    if (key.includes(month)) {
-    return true
+    // if the value of the months key includes the given month
+      if (bug[key].hasOwnProperty(month)) {
+        // return true
+      return true
+    }
+    else {
+      return false
   }
-}
+  }
 }
 
 // Given an array of objects representing bugs, return an object that'll be

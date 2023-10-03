@@ -33,12 +33,17 @@ button.addEventListener(`click`, () => {
 //     alert(textInput).value
 // })
 
+let form = document.querySelector('form')
 
-let sendAlert = document.querySelector("#alert-message")
+// let alertInput = sendAlert.innerText
+const createAlert = (event) => {
+    let sendAlert = document.querySelector('#alert-message')
+    event.preventDefault()
+    alert(sendAlert.value)
+    // alertInput.value = ''
+}
+form.addEventListener('submit', createAlert)
 
-sendAlert.addEventListener(`submit`, () => {
-    alert(`#alert-message`.innerText)
-})
 
 // Add an item
 //
@@ -56,13 +61,18 @@ sendAlert.addEventListener(`submit`, () => {
 //   </ol>
 
 /// TODO: replace this with your code
-let dblClick = document.querySelector('#item-adder')
-let entry = `Item`
-let listItem = document.querySelector('#list')
-dblClick.addEventListener('click', () => {
+let addItem = document.querySelector('#item-adder')
+
+const createListItem = (event) => {
+    let listItem = document.querySelector('#list')
+    event.preventDefault()
+   let li = document.createElement('li')
+   li.innerText = 'Item'
+   listItem.appendChild(li)
+//    li.setAttribute('id', 'list')
+}
+addItem.addEventListener('dblclick', createListItem)
 // make it so that every time item adder is clicked, one item is added to the list
-listItem.appendChild(entry)
-})
 // Change colors
 //
 // Users should be able to change the color of any element with the
@@ -73,7 +83,16 @@ listItem.appendChild(entry)
 // Stuff Blue" should make text blue.
 
 /// TODO: replace this with your code
-
+// let changeColor = document.querySelector('#color-changer')
+let blueColor = document.querySelector('#blue')
+let redColor = document.querySelector('#red')
+const changeRed = (event) => {
+    event.preventDefault()
+    let reddener = document.querySelectorAll('.changes-colors')
+    reddener.innerText.style.color = rgb(255, 0, 0);
+}
+blueColor.addEventListener('click', changeBlue)
+redColor.addEventListener('click', changeRed)
 // Calculate factorial
 //
 // The factorial of a number is the product of an integer and all the integers
@@ -90,7 +109,23 @@ listItem.appendChild(entry)
 //   - puts the result of the function inside the "result" span
 
 /// TODO: replace this with your code
+let form = document.querySelector('#factorial-calculator')
 
+const calculator = (n, event) => {
+    event.preventDefault()
+let answer = 1
+if (n === 0 || n === 1) {
+    return answer
+}
+else {
+    for (let i = n; i >= 1; i--) {
+        answer = answer * i
+        return answer
+    }
+}
+
+}
+form.addEventListener('submit', calculator)
 // Validate a form
 //
 // This form is used to collect word recommendations from users. However, it
