@@ -91,8 +91,14 @@ const changeRed = (event) => {
     let reddener = document.querySelectorAll('.changes-colors')
     reddener.innerText.style.color = rgb(255, 0, 0);
 }
-blueColor.addEventListener('click', changeBlue)
+const changeBlue = (event) => {
+    event.preventDefault()
+    let bluey = document.querySelectorAll('.changes-color')
+    bluey.innerText.style.color = rgb(0,0,255);
+}
+// blueColor.addEventListener('click', changeBlue)
 redColor.addEventListener('click', changeRed)
+blueColor.addEventListener('click', changeBlue)
 // Calculate factorial
 //
 // The factorial of a number is the product of an integer and all the integers
@@ -109,23 +115,25 @@ redColor.addEventListener('click', changeRed)
 //   - puts the result of the function inside the "result" span
 
 /// TODO: replace this with your code
-let form = document.querySelector('#factorial-calculator')
+let form2 = document.querySelector('#factorial-calculator')
 
-const calculator = (n, event) => {
+const calculateF = (event) => {
     event.preventDefault()
+    let result = document.querySelector('#result')
 let answer = 1
+let n = document.querySelector('#factorial-input')
 if (n === 0 || n === 1) {
-    return answer
+    result.innerText = answer
 }
 else {
     for (let i = n; i >= 1; i--) {
         answer = answer * i
-        return answer
+        result.innerText = answer
     }
 }
 
 }
-form.addEventListener('submit', calculator)
+form2.addEventListener('submit', calculateF)
 // Validate a form
 //
 // This form is used to collect word recommendations from users. However, it
@@ -142,3 +150,19 @@ form.addEventListener('submit', calculator)
 // change the color of the text to red..
 
 /// TODO: replace this with your code
+let recommendWord = document.querySelector('#recommend-word')
+
+const wordLength = (event) => {
+    event.preventDefault()
+let word = document.querySelector('#word')
+let feedback = document.querySelector('.form-feedback')
+if (word.innerText.length < 4) {
+    feedback.innerText = `The word must be at least 4 characters long.`
+    feedback.style.color = rgb(255, 0, 0);
+}
+else {
+    feedback.innerText = `Thanks for your submission!`
+    feedback.style.color = rgb(0,128,0);
+}
+}
+recommendWord.addEventListener('submit', wordLength)

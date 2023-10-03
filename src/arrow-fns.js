@@ -49,7 +49,14 @@ function evens(nums) {
 //   createGreetings(['Clive', 'Jill', 'Torgal']);
 //   => ['Hello, Clive!', 'Hello, Jill!', 'Hello, Torgal!']
 // const greetingMessage = (name) => `Hello, ${name}!`
-function createGreetings(names) {}
+function createGreetings(namesArr) {
+    let newArr = []
+  for (const name in namesArr) {
+    let helloName = `Hello, ${namesArr[name]}!`
+    newArr.push(helloName)
+  }
+  return newArr
+}
 //     return greetingcb(names)
 // }
 // createGreetings.forEach(([], greetingMessage) => {
