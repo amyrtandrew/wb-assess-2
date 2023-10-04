@@ -88,13 +88,17 @@ let blueColor = document.querySelector('#blue')
 let redColor = document.querySelector('#red')
 const changeRed = (event) => {
     event.preventDefault()
-    let reddener = document.querySelectorAll('.changes-colors')
-    reddener.innerText.style.color = rgb(255, 0, 0);
+    let reddeners = document.querySelectorAll('.changes-colors')
+    for (let red of reddeners) {
+        red.style.color = 'rgb(255, 0, 0)';
+    }
 }
 const changeBlue = (event) => {
     event.preventDefault()
-    let bluey = document.querySelectorAll('.changes-color')
-    bluey.innerText.style.color = rgb(0,0,255);
+    let bluey = document.querySelectorAll('.changes-colors')
+    for (let blue of bluey) {
+        blue.style.color = 'rgb(0, 0, 255)';
+    }
 }
 // blueColor.addEventListener('click', changeBlue)
 redColor.addEventListener('click', changeRed)
@@ -120,9 +124,12 @@ let form2 = document.querySelector('#factorial-calculator')
 const calculateF = (event) => {
     event.preventDefault()
     let result = document.querySelector('#result')
-let answer = 1
-let n = document.querySelector('#factorial-input')
-if (n === 0 || n === 1) {
+    console.log(`result: ${result}`)
+    let answer = 1
+    console.log(`answer: ${answer}`)
+    let n = document.querySelector('#factorial-input').value
+    console.log(`n: ${n}`)
+if (n == 0 || n == 1) {
     result.innerText = answer
 }
 else {
@@ -156,13 +163,14 @@ const wordLength = (event) => {
     event.preventDefault()
 let word = document.querySelector('#word')
 let feedback = document.querySelector('.form-feedback')
-if (word.innerText.length < 4) {
+if (word.value.length < 4) {
     feedback.innerText = `The word must be at least 4 characters long.`
-    feedback.style.color = rgb(255, 0, 0);
+    feedback.style.color = 'rgb(255, 0, 0)';
 }
 else {
     feedback.innerText = `Thanks for your submission!`
-    feedback.style.color = rgb(0,128,0);
+    feedback.style.color = 'rgb(0,128,0)';
+   
 }
 }
 recommendWord.addEventListener('submit', wordLength)

@@ -111,10 +111,19 @@ function translateToPirateTalk(phrase) {
 //   wordCount('hello world')
 //   => { hello: 1, world: 1 }
 function wordCount(str) {
-//   const strAsArray = str.split(' ')
-//   for (const element of strAsArray) {
-//     if (element )
-//   }
+  //make an object in which the key = each word in the string and 
+  // the value is how many times that word was in the string
+  const strArr = str.split(' ')
+  const wordObj = {};
+  
+  for (const word of strArr) {
+    if (wordObj[word]) {
+      wordObj[word]++;
+    } else {
+      wordObj[word] = 1
+    }
+  }
+  return wordObj
 }
 
 // Given an object representing a bug, return true if the given bug is
@@ -138,17 +147,8 @@ function wordCount(str) {
 //   }, 1);
 //   => true
 function isBugAvailable(bug, month) {
-  // loop throug each key in bug object
-  for (const key in bug) {
-    // if the value of the months key includes the given month
-      if (bug[key].hasOwnProperty(month)) {
-        // return true
-      return true
-    }
-    else {
-      return false
-  }
-  }
+  // loop throug each element of months array
+return bug.availability.months.includes(month)
 }
 
 // Given an array of objects representing bugs, return an object that'll be
