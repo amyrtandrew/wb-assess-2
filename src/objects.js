@@ -164,22 +164,22 @@ return bug.availability.months.includes(month)
 // }
 //
 // Ex.:
-//   const bugs = [
-//     {
-//       name: 'peacock butterfly',
-//       availability: {
-//         rarity: 'common',
-//         months: [1, 2, 3],
-//       },
-//     },
-//     {
-//       name: 'yellow butterfly',
-//       availability: {
-//         rarity: 'common',
-//         months: [3],
-//       },
-//     },
-//   ];
+  const bugs = [
+    {
+      name: 'peacock butterfly',
+      availability: {
+        rarity: 'common',
+        months: [1, 2, 3],
+      },
+    },
+    {
+      name: 'yellow butterfly',
+      availability: {
+        rarity: 'common',
+        months: [3],
+      },
+    },
+  ];
 //   buildBugHuntCalendar(bugs);
 //   => {
 //     1: ['peacock butterfly'],
@@ -192,7 +192,11 @@ return bug.availability.months.includes(month)
 //     12: [],
 //   }
 
-function buildBugHuntCalendar(bugs) {}
+function buildBugHuntCalendar(bugs) {
+  // let obj = 
+  // monthArr = bugs.availability.months
+  // console.log(monthsArr)
+}
 
 export {
   buildBugHuntCalendar,
